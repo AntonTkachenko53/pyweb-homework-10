@@ -10,6 +10,7 @@ from rest_framework.permissions import AllowAny
 from .serializers import UserRegistrationSerializer
 
 from rest_framework.decorators import permission_classes
+from django.core.mail import send_mail
 
 
 class UserRegistrationView(generics.CreateAPIView):
