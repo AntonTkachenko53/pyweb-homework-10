@@ -3,6 +3,10 @@ from .models import Author
 from django.contrib.auth.models import User
 
 
+class PasswordResetSerializer(serializers.Serializer):
+    email = serializers.EmailField()
+
+
 class AuthorSerializer(serializers.ModelSerializer):
     class Meta:
         model = Author
@@ -14,4 +18,4 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ['username', 'password', ]
+        fields = ['username', 'password', 'email']
